@@ -17,6 +17,7 @@ npm run dev -- -H 127.0.0.1 -p 8001
 #any other port apart from port 8000 would do the job
 
 #for Django project
+
 python manage.py runserver
 
 ```
