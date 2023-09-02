@@ -8,7 +8,7 @@ This is a Next.js | Django-graphene Project.
 ## Getting Started
 
 This project takes advantage of Django-graphql-auth package for authentication, therefore in order to get a valid JWT cookie, you need to run both Nextjs and Django apps on same origin for CORS and csrf validation.
-for developement, easiest way would be to run Nextjs project on loopback ip on any port to match Django's origin:
+for development, easiest way would be to run Nextjs project on loopback ip on any port to match Django's origin:
 
 ```bash
 #for Next.js project
