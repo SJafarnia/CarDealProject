@@ -7,7 +7,7 @@ import { useIsomorphicLayoutEffect } from 'usehooks-ts';
 import NavItem from './NavItem';
 
 function Navbar({ main }) {
-    const [isSigneIn, setIsSigneIn] = useState(true)
+    const [isSigneIn, setIsSigneIn] = useState(false)
     const isMobil = useMediaQuery({ maxWidth: 900 });
     const [isMobile, setIsMobile] = useState(false)
     const [showFilters, setShowFilters] = useState("hidden")

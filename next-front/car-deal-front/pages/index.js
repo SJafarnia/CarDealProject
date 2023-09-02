@@ -1,17 +1,19 @@
 import HomePage from '@/components/templates/HomePage'
 import client from "../graphql";
 import { createContext } from "react";
-import Navbar from '@/components/layout/nav/Navbar';
 import { AllCars } from '@/graphs/graphql';
+import Head from 'next/head';
 
 export const DataContext = createContext();
 
 export default function Home({ data }) {
   // if (data) {
   return (
-    <DataContext.Provider value={data}>
-      <HomePage />
-    </DataContext.Provider>
+    <>
+      <DataContext.Provider value={data}>
+        <HomePage />
+      </DataContext.Provider>
+    </>
   )
   // }
   // return <Navbar main="true" />

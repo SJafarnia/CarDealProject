@@ -2,15 +2,24 @@ import CarsList from "@/components/templates/CarsList";
 import client from "../../graphql";
 import { createContext } from "react";
 import { AllCars } from "../../graphs/graphql";
+import Head from "next/head";
 
 export const CarsListContext = createContext();
 
 export default function Cars({ data }) {
     if (data) {
         return (
-            <CarsListContext.Provider value={data}>
-                <CarsList graphData={data} />
-            </CarsListContext.Provider>
+            <>
+                <Head>
+                    <title>
+                        Cars
+                    </title>
+                    <meta name="description" content="car prices"></meta>
+                </Head>
+                <CarsListContext.Provider value={data}>
+                    <CarsList graphData={data} />
+                </CarsListContext.Provider>
+            </>
         )
     }
     return <CarsList />

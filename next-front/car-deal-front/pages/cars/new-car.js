@@ -1,11 +1,20 @@
 import PostUploadPage from "@/components/templates/PostUploadPage"
 import client from "@/graphql";
 import { userDetails } from "@/graphs/graphql";
+import Head from "next/head";
 
 export default function newCarPage() {
 
     return (
-        <PostUploadPage />
+        <>
+            <Head>
+                <title>
+                    Post your car
+                </title>
+                <meta name="robots" content="noindex,nofollow" />
+            </Head>
+            <PostUploadPage />
+        </>
     )
 }
 

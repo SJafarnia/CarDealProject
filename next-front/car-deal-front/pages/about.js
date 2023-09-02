@@ -1,9 +1,16 @@
 import AboutUs from '@/components/templates/AboutUs'
-import React from 'react'
+import Head from 'next/head'
 
 function about() {
     return (
-        <AboutUs />
+        <>
+            <Head>
+                <title>
+                    About Us
+                </title>
+            </Head>
+            <AboutUs />
+        </>
     )
 }
 

@@ -2,11 +2,11 @@ import { useMutation } from '@apollo/client';
 import { VerifyAccount } from '../../../graphs/graphql';
 import client from '@/graphql.js';
 
-export default function Activate({ data }) {
-
-    return (<>
-        {data?.success ? <div> ACC VERIFIED </div> : null}
-    </>
+export default function Activate() {
+    return (
+        <>
+            <div> ACCOUNT NOT VERIFIED </div>
+        </>
     )
 }
 
@@ -19,19 +19,22 @@ export async function getServerSideProps(context) {
         mutation: VerifyAccount,
         variables: { token }
     })
-    console.log(data.verifyAccount)
-    console.log(error)
     // const data = await verify({ variables: { token } })
-    // console.log(data)
     if (!data.verifyAccount.success) {
         return {
             notFound: true
         }
     }
-    // return {
-    //     props: { data: data.verifyAccount },
-    // }
-    return {
-        props: { data: data.verifyAccount }
+    if (data) {
+        return {
+            redirect: {
+                permanent: false,
+                destination: "/"
+            }
+        }
     }
+    return {
+        props: { data: "" },
+    }
+
 }

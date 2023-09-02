@@ -3,20 +3,27 @@ import CarDetails from "@/components/templates/CarDetails"
 import client from '@/graphql'
 import { gql } from '@apollo/client';
 import { data } from "autoprefixer";
+import Head from "next/head";
 import { createContext } from "react";
 
 export const CarDetailContext = createContext()
 
 export default function CarDetailPage({ data }) {
+    console.log(params)
     if (data) {
         return (
-            <div className='bg-[#eff3f6]'>
-                <Navbar main="false" />
-                {/* {data ? CarDetailContext: } */}
-                <CarDetailContext.Provider value={data}>
-                    <CarDetails carId={data.id} />
-                </CarDetailContext.Provider>
-            </div>
+            <>
+                <Head>
+                    <title>Car {data.id}</title>
+                </Head>
+                <div className='bg-[#eff3f6]'>
+                    <Navbar main="false" />
+                    {/* {data ? CarDetailContext: } */}
+                    <CarDetailContext.Provider value={data}>
+                        <CarDetails carId={data.id} />
+                    </CarDetailContext.Provider>
+                </div>
+            </>
         )
     }
     return (

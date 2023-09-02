@@ -57,6 +57,10 @@ export default function MyApp(props) {
         {/* <Context> */}
         <AuthProvider>
           <Provider store={store}>
+            <Head>
+              <title>Car Dealer Project</title>
+              <meta name="description" content="sell your car online"></meta>
+            </Head>
             <main className={myFont.className}>
               <Component {...pageProps} />
             </main>
