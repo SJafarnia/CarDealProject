@@ -1,6 +1,9 @@
 # CarDealProject
 
+
 This is a Next.js | Django-graphene Project. 
+
+
 
 ## Getting Started
 
@@ -18,7 +21,10 @@ python manage.py runserver
 
 ```
 
+
 ## Python Hints
+
+
 
 Remember to create a virtual environment for Django project and install required packages via
 
@@ -26,6 +32,7 @@ Remember to create a virtual environment for Django project and install required
 pip install -r requirements.txt
 
 ```
+
 
 ## Activte Account
 
